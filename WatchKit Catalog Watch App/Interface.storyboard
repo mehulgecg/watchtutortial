@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="14A389" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3734"/>
+    </dependencies>
+    <scenes>
+        <!--Catalog-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="interfaceController" title="Catalog" id="AgC-eL-Hgc" customClass="AAPLInterfaceController">
+                    <items>
+                        <table alignment="left" layout="vertical" id="3Hk-Dw-EC3">
+                            <items>
+                                <tableRow identifier="default" id="LQ2-gd-Btl" customClass="AAPLElementRowController">
+                                    <group key="rootItem" width="1" height="40" alignment="left" id="ZGA-mp-Zka">
+                                        <items>
+                                            <label alignment="center" verticalAlignment="center" text="Label" id="F1f-WA-jZa"/>
+                                        </items>
+                                        <color key="backgroundColor" red="0.94901960784313721" green="0.95686274509803926" blue="0.9882352941176471" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="elementLabel" destination="F1f-WA-jZa" id="afA-3y-qUG"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="interfaceTable" destination="3Hk-Dw-EC3" id="8tm-Sm-gVl"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="-69"/>
+        </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="BOz-TT-tkC">
+            <objects>
+                <glanceController spacing="0.0" topTemplateType="bodyBody" id="0uZ-2p-rRc" customClass="AAPLGlanceController">
+                    <items>
+                        <label alignment="left" text="WatchKit Catalog" id="gaI-OH-psT"/>
+                        <label alignment="left" text="Tap Glance to go to image controller." id="ddL-00-QSD"/>
+                        <group alignment="left" id="56w-Mv-CNg">
+                            <items>
+                                <imageView width="1" height="1" alignment="left" contentMode="scaleAspectFit" id="qPv-Zg-Ju4"/>
+                            </items>
+                        </group>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="14"/>
+                    <connections>
+                        <outlet property="glanceImage" destination="qPv-Zg-Ju4" id="zU3-MG-SbW"/>
+                    </connections>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="235" y="1426"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="center" text="- Static -" textAlignment="center" numberOfLines="0" id="ivJ-0G-bDR"/>
+                        <separator alignment="left" id="fUV-Py-o42">
+                            <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </separator>
+                        <label alignment="left" text="Alert from payload." numberOfLines="0" id="XG7-oj-wkh"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf">
+                        <color key="sashColor" red="0.80000001190000003" green="0.40000000600000002" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </notificationCategory>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="XG7-oj-wkh" id="gMR-p4-Z2l"/>
+                        <segue destination="gdX-wl-uQE" kind="relationship" relationship="dynamicNotificationInterface" id="fKh-qV-3T2"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="235" y="1755"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="KIl-fV-djm">
+            <objects>
+                <controller id="gdX-wl-uQE" customClass="AAPLNotificationController">
+                    <items>
+                        <label alignment="center" text="- Dynamic -" textAlignment="center" numberOfLines="0" id="pZY-e7-d8r"/>
+                        <separator alignment="left" id="Ulp-oM-cKi">
+                            <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </separator>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="556" y="1755"/>
+        </scene>
+        <!--Alerts-->
+        <scene sceneID="m77-Cb-HAI">
+            <objects>
+                <controller identifier="labelDetailController" title="Alerts" id="ACa-O1-ewQ" customClass="AAPLLabelDetailController">
+                    <items>
+                        <table alignment="left" layout="vertical" id="s99-Gw-ICV">
+                            <items>
+                                <tableRow id="1VA-Ng-b10">
+                                    <group key="rootItem" width="1" alignment="left" id="3Sy-wC-wg2">
+                                        <items>
+                                            <imageView alignment="left" image="LocationMarker" id="o5j-G7-2yd"/>
+                                            <label alignment="left" text="Label" id="zrU-5n-XSN"/>
+                                        </items>
+                                    </group>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="210"/>
+        </scene>
+        <!--Image-->
+        <scene sceneID="M3I-h5-v4F">
+            <objects>
+                <controller identifier="imageDetailController" title="Image" id="0Wv-Oj-wcZ" customClass="AAPLImageDetailController">
+                    <items>
+                        <imageView width="1" alignment="center" contentMode="scaleAspectFill" id="h5E-26-Mhp"/>
+                        <imageView alignment="center" image="Bus0" animationDuration="2" id="4vt-jD-Gfc"/>
+                        <group width="1" alignment="left" spacing="2" id="OLq-fQ-zhq">
+                            <items>
+                                <button width="0.5" alignment="left" title="Play" id="Ebj-Ir-WMk">
+                                    <connections>
+                                        <action selector="playAnimation" destination="0Wv-Oj-wcZ" id="Cj4-Fc-2TA"/>
+                                    </connections>
+                                </button>
+                                <button width="0.5" alignment="left" title="Stop" id="Edy-lZ-IBA">
+                                    <connections>
+                                        <action selector="stopAnimation" destination="0Wv-Oj-wcZ" id="rvE-hk-T7I"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="animatedImage" destination="4vt-jD-Gfc" id="FZE-X9-126"/>
+                        <outlet property="playButton" destination="Ebj-Ir-WMk" id="JDk-N0-agS"/>
+                        <outlet property="staticImage" destination="h5E-26-Mhp" id="WG3-kg-3ZO"/>
+                        <outlet property="stopButton" destination="Edy-lZ-IBA" id="SVM-Av-kT4"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="235" y="706.5"/>
+        </scene>
+        <!--Alerts-->
+        <scene sceneID="UNG-mI-Hyp">
+            <objects>
+                <controller identifier="tableDetailController" title="Alerts" id="H8F-tc-qXL" customClass="AAPLTableDetailController">
+                    <items>
+                        <table alignment="left" layout="vertical" id="nXC-Mh-TYy">
+                            <items>
+                                <tableRow identifier="default" id="zJA-dk-zIT" customClass="AAPLTableRowController">
+                                    <group key="rootItem" width="1" height="40" alignment="left" spacing="6" id="ASs-9x-fCK">
+                                        <items>
+                                            <imageView width="35" height="35" alignment="left" verticalAlignment="center" image="LocationMarker" id="rac-gq-1kM"/>
+                                            <label alignment="left" verticalAlignment="center" text="Location" id="jkO-KQ-vGr"/>
+                                        </items>
+                                        <color key="backgroundColor" red="0.94901960780000005" green="0.95686274510000002" blue="0.98823529409999999" alpha="0.14000000000000001" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <edgeInsets key="margins" left="2" right="2" top="2" bottom="2"/>
+                                    </group>
+                                    <connections>
+                                        <outlet property="rowLabel" destination="jkO-KQ-vGr" id="Hcb-P2-F5Q"/>
+                                    </connections>
+                                </tableRow>
+                            </items>
+                        </table>
+                    </items>
+                    <connections>
+                        <outlet property="interfaceTable" destination="nXC-Mh-TYy" id="4YS-uT-eWw"/>
+                        <segue destination="jfY-fy-4W5" kind="relationship" relationship="nextPage" id="6Pk-X8-ahy"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="396" y="835"/>
+        </scene>
+        <!--Love-->
+        <scene sceneID="MUR-Eg-eie">
+            <objects>
+                <controller identifier="Love" id="UVL-ik-ptn">
+                    <items>
+                        <label alignment="left" text="Label" id="JL3-Mi-zUG"/>
+                        <button width="1" alignment="left" title="Button" id="C0m-q2-dRj"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="229" y="1093"/>
+        </scene>
+        <!--Controller-->
+        <scene sceneID="vQD-To-ac3">
+            <objects>
+                <controller identifier="reply" title="Controller" id="jfY-fy-4W5" customClass="AAPLControllerDetailController">
+                    <items>
+                        <button width="1" alignment="center" title="Present Pages" id="8Dv-qI-ZTo">
+                            <connections>
+                                <action selector="presentPages" destination="jfY-fy-4W5" id="gDf-ps-mFH"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <menu key="menu" id="l2j-7A-7iS">
+                        <items>
+                            <menuItem title="Yes" icon="accept" id="Ne8-T1-LRb">
+                                <connections>
+                                    <action selector="menuItemTapped" destination="jfY-fy-4W5" id="vgh-DN-Aoc"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="No" icon="decline" id="IBg-XE-IlE">
+                                <connections>
+                                    <action selector="menuItemTapped" destination="jfY-fy-4W5" id="7JB-ww-XgM"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Whale" image="Whale.png" id="cf0-ge-u8R">
+                                <connections>
+                                    <action selector="menuItemTapped" destination="jfY-fy-4W5" id="gyy-0l-JXk"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Cupertino" image="LocationMarker.png" id="ECD-xa-OEf">
+                                <connections>
+                                    <action selector="menuItemTapped" destination="jfY-fy-4W5" id="nhC-H1-0DK"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="669" y="1088.25"/>
+        </scene>
+        <!--replys-->
+        <scene sceneID="cV5-aP-oTh">
+            <objects>
+                <controller identifier="replys" id="tD1-0m-c6s" customClass="AAPLNotificationController">
+                    <items>
+                        <label alignment="center" text="- Dynamic -" textAlignment="center" numberOfLines="0" id="wox-lm-AYY"/>
+                        <separator alignment="left" id="W3M-fg-gqW">
+                            <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </separator>
+                    </items>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="786" y="1755"/>
+        </scene>
+    </scenes>
+    <color key="tintColor" red="0.80000001192092896" green="0.40000000596046448" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+</document>
